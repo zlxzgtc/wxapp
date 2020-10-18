@@ -1,0 +1,67 @@
+/* pages/ranks/ranks.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.userrank{
+  margin: 20px;
+}
+
+.table {
+  border: 0px solid darkgray;
+  padding-left:20px;
+  padding-right:20px;
+  padding-bottom:15px;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+}
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: black;
+  color: #fff;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background: black;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+
+/*翻页*/
+.pages{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

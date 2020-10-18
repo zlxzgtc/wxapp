@@ -1,0 +1,40 @@
+<!--pages/ranks/ranks.wxml-->
+<view class="userinfo">
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <block wx:else>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </block>
+  <block>
+  <text class="userrank">我的分数：</text>
+  <text class="userrank">{{userscore}}</text>
+  <text class="userrank">我的排名：</text>
+  <text class="userrank">{{userrank}}</text>
+  </block>
+</view>
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">排名</view>
+    <view class="th">昵称</view>
+    <view class="th ">成绩</view>
+  </view>
+  <block wx:for="{{ranklist}}" wx:key="key">
+    <view class="tr bg-w" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{10*(pagenum-1)+index+1}}</view>
+      <view class="td">{{item.username}}</view>
+      <view class="td">{{item.score}}</view>
+    </view>
+    <view class="tr bg-g" wx:else>
+      <view class="td">{{10*(pagenum-1)+index+1}}</view>
+      <view class="td">{{item.username}}</view>
+      <view class="td">{{item.score}}</view>
+    </view>
+  </block>
+</view>
+<view class="pages">
+  <button wx:if="{{pagenum==1}}">首页</button>
+  <button wx:else bindtap="pre">上一页</button>
+  <text>{{pagenum}}/{{allpages}}</text>
+  <button wx:if="{{pagenum==allpages}}">尾页</button>
+  <button wx:else bindtap="next">下一页</button>
+</view>
